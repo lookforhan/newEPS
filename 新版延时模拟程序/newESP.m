@@ -12,7 +12,9 @@ if libisloaded(libName)
     unloadlibrary (libName)
 end
 loadlibrary(libName,hfileName);
-if false
+try
+    load  EPA_F
+catch
     path('C:\Users\hc042\Desktop\renxingjisuancode2\toolkit',path);
     path('C:\Users\hc042\Desktop\renxingjisuancode2\readNet',path);
     path('C:\Users\hc042\Desktop\renxingjisuancode2\damageNet',path);
@@ -21,6 +23,7 @@ if false
     path('C:\Users\hc042\Desktop\renxingjisuancode2\eventTime',path);
     path('C:\Users\hc042\Desktop\renxingjisuancode2\random',path);
     path('C:\Users\hc042\Desktop\renxingjisuancode2\random_singleTime',path);%单点模拟所需的函数。
+    load  EPA_F2
 end
 input_net_filename = 'net01.inp';
 damage_file = 'damage.txt';
@@ -48,7 +51,7 @@ time = [0,3600,7200,10800,14400,18000,21600];
 % fclose(fid);
 % save EPA_F2 EPA_format
 %=======================
-load EPA_F
+
 [t1, net_data ] = read_net( input_net_filename,EPA_format);
 if t1
     keyboard
